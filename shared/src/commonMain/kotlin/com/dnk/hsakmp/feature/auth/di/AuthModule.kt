@@ -6,6 +6,7 @@ import com.dnk.hsakmp.feature.auth.domain.HandleLoginChallengePushUseCase
 import com.dnk.hsakmp.feature.auth.domain.LoginChallengePayloadParser
 import com.dnk.hsakmp.feature.auth.domain.LoginChallengeRepository
 import com.dnk.hsakmp.feature.auth.presentation.AuthChallengeViewModel
+import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
 val authModule = module {
@@ -13,5 +14,5 @@ val authModule = module {
     single<LoginChallengeRepository> { InMemoryLoginChallengeRepository() }
     single { HandleLoginChallengePushUseCase(get()) }
     single { GetPendingLoginChallengeUseCase(get()) }
-    factory { AuthChallengeViewModel(get()) }
+    viewModel { AuthChallengeViewModel(get()) }
 }
