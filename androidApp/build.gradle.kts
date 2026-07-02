@@ -20,6 +20,9 @@ dependencies {
     implementation(libs.firebase.messaging)
     implementation(libs.firebase.analytics)
 
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.android)
+
     implementation(libs.androidx.activity.compose)
 
     implementation(libs.compose.uiToolingPreview)
